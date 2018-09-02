@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    var divs = $('.mydiv');
+    var divs = $('.mydiv'); // div to split on
+    var scrollTime = 1000; // time taken to scroll each page in ms
     var dir = 'up'; // wheel scroll direction
     var div = 0; // current div
     $(document.body).on('DOMMouseScroll mousewheel', function (e) {
@@ -24,7 +25,7 @@ $(document).ready(function () {
         //console.log(div, dir, divs.length);
         $('html,body').stop().animate({
             scrollTop: divs.eq(div).offset().top
-        }, { duration: 1000, easing: 'swing' });
+        }, { duration: scrollTime, easing: 'swing' });
         return false;
     });
     $(window).resize(function () {
